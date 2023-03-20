@@ -22,40 +22,37 @@ logging:
 metadata:
     identification:
         title:
-            en: WIS 2.0 in a box
+            en: HubKit in a box
         description:
             en: |-
-                WIS 2.0 in a box provides a platform with the capabilities
-                for centres to integrate their data holdings and publish them
-                to the WMO Information System with a plug and play capability
+                HubKit in a box provides a platform with the capabilities
+                for organizations to integrate their data holdings and publish them
+                to SensorThings API with a plug and play capability
                 supporting data publishing, discovery and access
         keywords:
             en:
-                - wmo
-                - wis 2.0
+                - hubkit
+                - hub2box
+                - wis2box
         keywords_type: theme
-        terms_of_service: https://public.wmo.int/en/our-mandate/what-we-do/observations/Unified-WMO-Data-Policy-Resolution
-        url: https://community.wmo.int/activity-areas/wis/wis2-implementation
+        terms_of_service: https://creativecommons.org/licenses/by/4.0/
+        url: https://github.com/internetofwater/
     license:
-        name: Unified WMO Data Policy
-        url: https://public.wmo.int/en/our-mandate/what-we-do/observations/Unified-WMO-Data-Policy-Resolution
+        name: CC-BY 4.0 license
+        url: https://creativecommons.org/licenses/by/4.0/
     provider:
-        name: Organization Name
-        url: https://pygeoapi.io
+        name: Center for Geospatial Solutions
+        url: http://cgs.earth/
     contact:
-        name: Lastname, Firstname
-        position: Position Title
-        address: Mailing Address
-        city: City
-        stateorprovince: Administrative Area
-        postalcode: Zip or Postal Code
-        country: Country
-        phone: +xx-xxx-xxx-xxxx
-        fax: +xx-xxx-xxx-xxxx
-        email: you@example.org
-        url: https://example.org
-        hours: Mo-Fr 08:00-17:00
-        instructions: During hours of service. Off on weekends.
+        name: Webb, Benjamin
+        position: Software Developer
+        address: 113 Brattle St
+        city: Cambridge
+        stateorprovince: Massachussetts
+        postalcode: 02138
+        country: USA
+        email: bwebb@lincolninst.edu
+        url: https://internetofwater.org
         role: pointOfContact
 
 resources:
@@ -67,9 +64,6 @@ resources:
             en: Data assets
         keywords:
             en:
-                - wmo
-                - wis 2.0
-                - bufr
                 - observations
         links:
             - type: text/html
@@ -85,28 +79,5 @@ resources:
               name: FileSystem
               data: ${WIS2BOX_DATADIR}/data
               file_types:
-                  - .bufr4
-    station-info:
-        type: process
-        processor:
-            name: wis2box_api.plugins.process.station_info.StationInfoProcessor
+                  - .csv
 
-    pygeometa-metadata-generate:
-        type: process
-        processor:
-            name: pygeometa.pygeoapi_plugin.PygeometaMetadataGenerateProcessor
-
-    pywcmp-wis2-topics-list:
-        type: process
-        processor:
-            name: pywcmp.pygeoapi_plugin.WIS2TopicHierarchyListTopicsProcessor
-
-    pywcmp-wis2-topics-validate:
-        type: process
-        processor:
-            name: pywcmp.pygeoapi_plugin.WIS2TopicHierarchyValidateTopicProcessor
-
-    pywcmp-wis2-wcmp2-ets:
-        type: process
-        processor:
-            name: pywcmp.pygeoapi_plugin.WCMP2ETSProcessor

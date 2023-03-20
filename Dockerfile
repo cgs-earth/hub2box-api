@@ -19,7 +19,7 @@
 #
 ###############################################################################
 
-FROM geopython/pygeoapi:latest
+FROM internetofwater/pygeoapi:ornl
 
 RUN apt-get update -y && apt-get install curl python3-pip git unzip -y
 
@@ -33,6 +33,6 @@ COPY ./docker/pygeoapi-config.yml $PYGEOAPI_CONFIG
 RUN cd /app \
     && python3 setup.py install \
     && pip3 install https://github.com/wmo-im/pywcmp/archive/master.zip \
-    && chmod +x /app/docker/es-entrypoint.sh /app/docker/wait-for-elasticsearch.sh
+    && chmod +x /app/docker/entrypoint.sh /app/docker/wait-for-elasticsearch.sh
 
-ENTRYPOINT [ "/app/docker/es-entrypoint.sh" ]
+ENTRYPOINT [ "/app/docker/entrypoint.sh" ]

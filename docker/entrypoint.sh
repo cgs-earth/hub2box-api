@@ -50,14 +50,6 @@ cd /pygeoapi
 # Lock all Python files (for gunicorn hot reload)
 find . -type f -name "*.py" | xargs chmod -R 0444
 
-echo "Caching topic hierarchy JSON"
-mkdir -p ~/.pywcmp/wis2-topic-hierarchy
-curl --output-dir /tmp -O https://wmo-im.github.io/wis2-topic-hierarchy/all.json.zip
-cd ~/.pywcmp/wis2-topic-hierarchy && unzip -j /tmp/all.json.zip
-
-echo "Caching WCMP2 schema"
-mkdir ~/.pywcmp/wcmp-2 && curl --output-dir ~/.pywcmp/wcmp-2 -O https://raw.githubusercontent.com/wmo-im/wcmp2/main/schemas/wcmp2-bundled.json
-
 echo "Trying to generate OpenAPI document"
 pygeoapi openapi generate ${PYGEOAPI_CONFIG} --output-file ${PYGEOAPI_OPENAPI}
 # pygeoapi openapi validate ${PYGEOAPI_OPENAPI}
