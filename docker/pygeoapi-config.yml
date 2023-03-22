@@ -25,10 +25,13 @@ metadata:
             en: HubKit in a box
         description:
             en: |-
-                HubKit in a box provides a platform with the capabilities
-                for organizations to integrate their data holdings and publish them
-                to SensorThings API with a plug and play capability
-                supporting data publishing, discovery and access
+                HubKit provides a platform for organizations to integrate their 
+                data holdings and publish them according to Internet of Water 
+                principles and Spatial Data on the Web Best Practices with 
+                plug-and-play capability supporting data access through OGC
+                API standards and data discovery through geoconnex.us. 
+                It leverages several open source projects, including 
+                pygeoapi, FROST-Server, and the WMO wis2box.
         keywords:
             en:
                 - hubkit
